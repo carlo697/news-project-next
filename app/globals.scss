@@ -6,4 +6,8 @@
   .section-container {
     @apply container mx-auto px-4;
   }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
 }
