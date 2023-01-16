@@ -1,3 +1,5 @@
+import AppFooter from "./components/AppFooter";
+import AppHeader from "./components/AppHeader";
 import "./globals.scss";
 
 export default function RootLayout({
@@ -12,7 +14,17 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <body>
+        <div className="flex flex-col min-h-screen">
+          <AppHeader />
+
+          {children}
+
+          <div className="mt-auto">
+            <AppFooter />
+          </div>
+        </div>
+      </body>
     </html>
   );
 }

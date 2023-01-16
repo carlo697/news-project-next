@@ -1,91 +1,63 @@
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "./page.module.scss";
-
-const inter = Inter({ subsets: ["latin"] });
+import react from "react";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <main className="section-container">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus augue
+        massa, volutpat in urna at, tempor auctor ipsum. Vestibulum a aliquam
+        nisi. Morbi posuere porta libero sit amet ultrices. Aliquam dapibus
+        lorem id metus porttitor, ac luctus odio aliquet. Duis commodo eros
+        nibh, sit amet rutrum justo placerat nec. Curabitur rutrum orci sit amet
+        purus blandit, ut vestibulum enim mattis. Integer tristique nec libero
+        in efficitur. Aenean ac tempor magna, in facilisis mauris. Nunc vitae
+        enim ac sapien ornare viverra. In malesuada rhoncus lacus id imperdiet.
+        Maecenas eget elit sit amet sapien vestibulum tincidunt et vel ipsum.
+        Nulla tincidunt ac risus sed elementum. Morbi vitae malesuada massa, a
+        semper elit.
+      </p>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus augue
+        massa, volutpat in urna at, tempor auctor ipsum. Vestibulum a aliquam
+        nisi. Morbi posuere porta libero sit amet ultrices. Aliquam dapibus
+        lorem id metus porttitor, ac luctus odio aliquet. Duis commodo eros
+        nibh, sit amet rutrum justo placerat nec. Curabitur rutrum orci sit amet
+        purus blandit, ut vestibulum enim mattis. Integer tristique nec libero
+        in efficitur. Aenean ac tempor magna, in facilisis mauris. Nunc vitae
+        enim ac sapien ornare viverra. In malesuada rhoncus lacus id imperdiet.
+        Maecenas eget elit sit amet sapien vestibulum tincidunt et vel ipsum.
+        Nulla tincidunt ac risus sed elementum. Morbi vitae malesuada massa, a
+        semper elit.
+      </p>
 
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus augue
+        massa, volutpat in urna at, tempor auctor ipsum. Vestibulum a aliquam
+        nisi. Morbi posuere porta libero sit amet ultrices. Aliquam dapibus
+        lorem id metus porttitor, ac luctus odio aliquet. Duis commodo eros
+        nibh, sit amet rutrum justo placerat nec. Curabitur rutrum orci sit amet
+        purus blandit, ut vestibulum enim mattis. Integer tristique nec libero
+        in efficitur. Aenean ac tempor magna, in facilisis mauris. Nunc vitae
+        enim ac sapien ornare viverra. In malesuada rhoncus lacus id imperdiet.
+        Maecenas eget elit sit amet sapien vestibulum tincidunt et vel ipsum.
+        Nulla tincidunt ac risus sed elementum. Morbi vitae malesuada massa, a
+        semper elit.
+      </p>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus augue
+        massa, volutpat in urna at, tempor auctor ipsum. Vestibulum a aliquam
+        nisi. Morbi posuere porta libero sit amet ultrices. Aliquam dapibus
+        lorem id metus porttitor, ac luctus odio aliquet. Duis commodo eros
+        nibh, sit amet rutrum justo placerat nec. Curabitur rutrum orci sit amet
+        purus blandit, ut vestibulum enim mattis. Integer tristique nec libero
+        in efficitur. Aenean ac tempor magna, in facilisis mauris. Nunc vitae
+        enim ac sapien ornare viverra. In malesuada rhoncus lacus id imperdiet.
+        Maecenas eget elit sit amet sapien vestibulum tincidunt et vel ipsum.
+        Nulla tincidunt ac risus sed elementum. Morbi vitae malesuada massa, a
+        semper elit.
+      </p>
     </main>
   );
 }
