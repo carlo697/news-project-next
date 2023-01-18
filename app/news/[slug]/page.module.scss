@@ -1,0 +1,55 @@
+.content {
+  h1 {
+    @apply text-6xl;
+  }
+
+  h2 {
+    @apply text-5xl;
+  }
+
+  h3 {
+    @apply text-4xl;
+  }
+
+  h4 {
+    @apply text-3xl;
+  }
+
+  h5 {
+    @apply text-2xl;
+  }
+
+  h6 {
+    @apply text-xl;
+  }
+
+  & > * + * {
+    @apply mt-6;
+  }
+
+  :global {
+    .is-layout-flex {
+      @apply flex gap-6 items-center flex-wrap;
+    }
+
+    .is-layout-flow > * + * {
+      @apply mt-6;
+    }
+
+    .wp-block-columns {
+      @apply lg:flex-nowrap;
+    }
+
+    .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+      @apply basis-full lg:basis-0 lg:grow;
+    }
+
+    .wp-block-column.is-vertically-aligned-center {
+      @apply self-center;
+    }
+
+    .wp-block-column.is-vertically-aligned-bottom {
+      @apply self-end;
+    }
+  }
+}
