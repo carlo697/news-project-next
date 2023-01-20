@@ -24,6 +24,20 @@ gql`
   }
 `;
 
+gql`
+  query GetNewsForStaticParams($cursor: String) {
+    posts(after: $cursor, first: 2) {
+      nodes {
+        slug
+      }
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
+  }
+`;
+
 const useNews = async (slug: string) => {
   const response = await WordpressGraphQLSdk.GetNews({ slug });
 
@@ -33,6 +47,22 @@ const useNews = async (slug: string) => {
 
   return response.post!;
 };
+
+export async function generateStaticParams() {
+  const slugs: { slug: string }[] = [];
+
+  let cursor: string | undefined | null;
+  do {
+    console.log("Fetching news...");
+    const response = await WordpressGraphQLSdk.GetNewsForStaticParams({
+      cursor,
+    });
+    response.posts?.nodes.forEach((node) => slugs.push({ slug: node.slug! }));
+    cursor = response.posts?.pageInfo?.endCursor;
+  } while (cursor);
+
+  return slugs;
+}
 
 const NewsPage = async ({ params }: { params: { slug: string } }) => {
   const post = await useNews(params.slug);
