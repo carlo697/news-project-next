@@ -39,6 +39,7 @@ gql`
 `;
 
 const useNews = async (slug: string) => {
+  console.log(`Fetching page: ${slug}`);
   const response = await WordpressGraphQLSdk.GetNews({ slug });
 
   if (!response.post) {
@@ -52,14 +53,16 @@ export async function generateStaticParams() {
   const slugs: { slug: string }[] = [];
 
   let cursor: string | undefined | null;
+  let hasNextPage: boolean | undefined;
   do {
-    console.log("Fetching news...");
+    console.log("Fetching single news...");
     const response = await WordpressGraphQLSdk.GetNewsForStaticParams({
       cursor,
     });
     response.posts?.nodes.forEach((node) => slugs.push({ slug: node.slug! }));
     cursor = response.posts?.pageInfo?.endCursor;
-  } while (cursor);
+    hasNextPage = response.posts?.pageInfo?.hasNextPage;
+  } while (hasNextPage);
 
   return slugs;
 }
