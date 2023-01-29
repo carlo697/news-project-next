@@ -1,27 +1,10 @@
 import NewsCard from "@/components/NewsCard";
-import { BasicNewsInfo } from "@/graphql/fragments/BasicNewsInfo";
 import { WordpressGraphQLSdk } from "@/helpers/WordpressApi";
-import gql from "graphql-tag";
 import Link from "next/link";
 
 type PageParams = {
   params: { category: string; cursor?: string[] };
 };
-
-gql`
-  query PaginatedNewsFromCategory($category: String, $cursor: String) {
-    posts(where: { categoryName: $category }, after: $cursor, first: 4) {
-      nodes {
-        ...BasicNewsInfo
-      }
-      pageInfo {
-        endCursor
-        hasNextPage
-      }
-    }
-  }
-  ${BasicNewsInfo}
-`;
 
 const Page = async ({ params }: PageParams) => {
   if (params.cursor && params.cursor.length > 1) {

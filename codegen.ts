@@ -7,6 +7,7 @@ const config: CodegenConfig = {
     "app/**/*.{tsx,ts}",
     "components/**/*.{tsx,ts}",
     "graphql/fragments/**/*.{tsx,ts}",
+    "graphql/queries/**/*.{tsx,ts}",
   ],
   debug: true,
   config: { skipTypename: true },

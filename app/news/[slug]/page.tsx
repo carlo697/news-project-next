@@ -1,42 +1,6 @@
 import { WordpressGraphQLSdk } from "@/helpers/WordpressApi";
-import gql from "graphql-tag";
 import Image from "next/image";
 import styles from "./page.module.scss";
-
-gql`
-  query GetNews($slug: ID!) {
-    post(id: $slug, idType: SLUG) {
-      id
-      title
-      content
-      featuredImage {
-        node {
-          id
-          altText
-          sourceUrl
-          mediaDetails {
-            width
-            height
-          }
-        }
-      }
-    }
-  }
-`;
-
-gql`
-  query GetNewsForStaticParams($cursor: String) {
-    posts(after: $cursor, first: 2) {
-      nodes {
-        slug
-      }
-      pageInfo {
-        hasNextPage
-        endCursor
-      }
-    }
-  }
-`;
 
 const useNews = async (slug: string) => {
   console.log(`Fetching page: ${slug}`);
