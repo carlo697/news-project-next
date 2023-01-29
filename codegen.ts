@@ -3,7 +3,11 @@ import type { CodegenConfig } from "@graphql-codegen/cli";
 const config: CodegenConfig = {
   overwrite: true,
   schema: "http://localhost/news-project/graphql",
-  documents: ["app/**/*.tsx"],
+  documents: [
+    "app/**/*.{tsx,ts}",
+    "components/**/*.{tsx,ts}",
+    "fragments/**/*.{tsx,ts}",
+  ],
   debug: true,
   config: { skipTypename: true },
   generates: {

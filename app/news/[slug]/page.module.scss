@@ -29,7 +29,7 @@
 
   :global {
     .is-layout-flex {
-      @apply flex gap-6 items-center flex-wrap;
+      @apply flex gap-6 flex-wrap;
     }
 
     .is-layout-flow > * + * {

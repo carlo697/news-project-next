@@ -1,1 +1,2 @@
-schemaPath: "./schema.json"
+schemaPath: schema.json
+documents: fragments/**/*.ts
