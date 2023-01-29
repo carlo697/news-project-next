@@ -6,7 +6,7 @@ const config: CodegenConfig = {
   documents: [
     "app/**/*.{tsx,ts}",
     "components/**/*.{tsx,ts}",
-    "fragments/**/*.{tsx,ts}",
+    "graphql/fragments/**/*.{tsx,ts}",
   ],
   debug: true,
   config: { skipTypename: true },
@@ -15,7 +15,7 @@ const config: CodegenConfig = {
       plugins: ["introspection"],
       config: { minify: true },
     },
-    "./graphql/graphql-request.ts": {
+    "./graphql/codegen/graphql-request.ts": {
       plugins: [
         "typescript",
         "typescript-operations",

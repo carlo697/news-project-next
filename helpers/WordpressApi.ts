@@ -1,4 +1,4 @@
-import { getSdk } from "@/graphql/graphql-request";
+import { getSdk } from "@/graphql/codegen/graphql-request";
 import { GraphQLClient } from "graphql-request";
 // import axios from "redaxios";
 

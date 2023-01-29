@@ -1,2 +1,2 @@
 schemaPath: schema.json
-documents: fragments/**/*.ts
+documents: graphql/fragments/**/*.ts

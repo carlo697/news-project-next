@@ -1,5 +1,5 @@
 import NewsCard from "@/components/NewsCard";
-import { BasicNewsInfo } from "@/fragments/BasicNewsInfo";
+import { BasicNewsInfo } from "@/graphql/fragments/BasicNewsInfo";
 import { WordpressGraphQLSdk } from "@/helpers/WordpressApi";
 import gql from "graphql-tag";
 import Link from "next/link";
