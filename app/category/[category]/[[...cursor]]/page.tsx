@@ -27,7 +27,7 @@ const Page = async ({ params }: PageParams) => {
   if (params.cursor && params.cursor.length > 1) {
     throw new Error("Not found page");
   }
-  
+
   const cursor = params?.cursor
     ? decodeURIComponent(params?.cursor?.[0])
     : undefined;
@@ -46,7 +46,7 @@ const Page = async ({ params }: PageParams) => {
 
   return (
     <>
-      <main className="pt-10 lg:pt-20">
+      <main className="py-10 lg:py-20">
         <div className="section-container">
           <div className="grid lg:grid-cols-12 gap-4">
             <div className="lg:order-2">
@@ -57,14 +57,16 @@ const Page = async ({ params }: PageParams) => {
               {nodes?.map((news) => (
                 <NewsCard key={news.id} {...news} />
               ))}
+
+              <div className="flex justify-end">
+                {pageInfo?.hasNextPage && (
+                  <Link href={`/category/${category}/${endCursor}`}>
+                    Load more posts
+                  </Link>
+                )}
+              </div>
             </div>
           </div>
-
-          {pageInfo?.hasNextPage && (
-            <Link href={`/category/${category}/${endCursor}`}>
-              Load more posts
-            </Link>
-          )}
         </div>
       </main>
     </>
