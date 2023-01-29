@@ -2,17 +2,6 @@ import { WordpressGraphQLSdk } from "@/helpers/WordpressApi";
 import Image from "next/image";
 import styles from "./page.module.scss";
 
-const useNews = async (slug: string) => {
-  console.log(`Fetching page: ${slug}`);
-  const response = await WordpressGraphQLSdk.NewsBySlug({ slug });
-
-  if (!response.post) {
-    throw new Error("This news doesn't exist");
-  }
-
-  return response.post!;
-};
-
 export async function generateStaticParams() {
   const slugs: { slug: string }[] = [];
 
@@ -32,7 +21,13 @@ export async function generateStaticParams() {
 }
 
 const NewsPage = async ({ params }: { params: { slug: string } }) => {
-  const post = await useNews(params.slug);
+  const response = await WordpressGraphQLSdk.NewsBySlug({ slug: params.slug });
+
+  if (!response.post) {
+    throw new Error("This news doesn't exist");
+  }
+
+  const post = response.post;
   const image = post.featuredImage?.node;
 
   return (
