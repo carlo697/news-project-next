@@ -2,11 +2,20 @@ import NewsCard from "@/components/NewsCard";
 import { WordpressGraphQLSdk } from "@/helpers/WordpressApi";
 import Link from "next/link";
 
-type PageParams = {
-  params: { category: string; cursor?: string[] };
-};
+type Params = { category: string; cursor?: string[] };
 
-const Page = async ({ params }: PageParams) => {
+export async function generateStaticParams() {
+  const slugs: Params[] = [];
+
+  const response = await WordpressGraphQLSdk.CategoryListForStaticParams();
+  response.categories?.nodes.forEach((node) =>
+    slugs.push({ category: node.slug!, cursor: undefined })
+  );
+
+  return slugs;
+}
+
+const Page = async ({ params }: { params: Params }) => {
   if (params.cursor && params.cursor.length > 1) {
     throw new Error("Not found page");
   }
