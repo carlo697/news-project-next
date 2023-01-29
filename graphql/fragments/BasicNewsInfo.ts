@@ -1,4 +1,5 @@
 import gql from "graphql-tag";
+import { MediaItem } from "./MediaItem";
 
 export const BasicNewsInfo = gql`
   fragment BasicNewsInfo on Post {
@@ -8,12 +9,7 @@ export const BasicNewsInfo = gql`
     slug
     featuredImage {
       node {
-        altText
-        sourceUrl
-        mediaDetails {
-          width
-          height
-        }
+        ...MediaItem
       }
     }
     categories {
@@ -23,4 +19,5 @@ export const BasicNewsInfo = gql`
       }
     }
   }
+  ${MediaItem}
 `;

@@ -18,7 +18,7 @@ const Page = async ({ params }: PageParams) => {
 
   // TODO: check if category exist
 
-  const { posts } = await WordpressGraphQLSdk.PaginatedNewsFromCategory({
+  const { posts } = await WordpressGraphQLSdk.NewsListByCategory({
     category,
     cursor,
   });

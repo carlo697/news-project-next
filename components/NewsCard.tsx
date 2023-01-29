@@ -1,5 +1,4 @@
-
-import { BasicNewsInfoFragment } from "@/graphql/graphql-request";
+import { BasicNewsInfoFragment } from "@/graphql/codegen/graphql-request";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";

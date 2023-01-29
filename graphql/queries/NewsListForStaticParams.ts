@@ -1,8 +1,8 @@
 import { gql } from "graphql-tag";
 
 gql`
-  query GetNewsForStaticParams($cursor: String) {
-    posts(after: $cursor, first: 2) {
+  query NewsListForStaticParams($cursor: String) {
+    posts(after: $cursor, first: 10) {
       nodes {
         slug
       }

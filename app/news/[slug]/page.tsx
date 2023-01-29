@@ -4,7 +4,7 @@ import styles from "./page.module.scss";
 
 const useNews = async (slug: string) => {
   console.log(`Fetching page: ${slug}`);
-  const response = await WordpressGraphQLSdk.GetNews({ slug });
+  const response = await WordpressGraphQLSdk.NewsBySlug({ slug });
 
   if (!response.post) {
     throw new Error("This news doesn't exist");
@@ -20,7 +20,7 @@ export async function generateStaticParams() {
   let hasNextPage: boolean | undefined;
   do {
     console.log("Fetching single news...");
-    const response = await WordpressGraphQLSdk.GetNewsForStaticParams({
+    const response = await WordpressGraphQLSdk.NewsListForStaticParams({
       cursor,
     });
     response.posts?.nodes.forEach((node) => slugs.push({ slug: node.slug! }));
