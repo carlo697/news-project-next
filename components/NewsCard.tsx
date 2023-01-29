@@ -1,4 +1,5 @@
-import { NewsCardFragment } from "@/graphql/graphql-request";
+
+import { BasicNewsInfoFragment } from "@/graphql/graphql-request";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -15,7 +16,7 @@ const NewsCard = ({
   slug,
   featuredImage,
   categories,
-}: NewsCardFragment) => {
+}: BasicNewsInfoFragment) => {
   const image = featuredImage?.node;
 
   return (
